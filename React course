@@ -33,3 +33,6 @@ and then we will have a export default function - which is basicaly a way to exp
 let  - follows the scope  - so if we have in a function and whatever we do it it inside a if loop and if we print 
 it outside if loop it will take the value before if blockso if block scope if diff
 but if we declare x with var, then even if we change it in if loop , then after the if loop too, it takes the changes and print them.
+var x = 10;
+var x = 10;
+const x = 10; -  we cannot assign a new value to a const variable in the function.
