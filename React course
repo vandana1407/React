@@ -23,3 +23,5 @@ thsi will create our project, in background, it is installing react, react don a
 7. in App.js , we will have some javascrtipt and html - the combination is called jsx.
 we will have a index,.html fiel and inside that a body tag and a div tag with id root, which is rendering App.js file.
 
+8. In react , for styling we cannpot use "class" as that is a reserved word in react, we use "classname" instead.
+
