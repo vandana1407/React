@@ -37,5 +37,9 @@ var x = 10;
 var x = 10;
 const x = 10; -  we cannot assign a new value to a const variable in the function. but we can change properties of const. e.g. 
 const book = {"title": "book1"} ;  we can do book.title="hello world";
+var has function scope , whewres et has block scope.
 
 11. Arrow functions - 
+const add = (a,b) => a+b;
+
+console.log(add(1,2));
