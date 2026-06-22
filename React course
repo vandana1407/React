@@ -1,9 +1,14 @@
 React course from udemy - https://www.udemy.com/course/master-react/learn/lecture/43485072#overview
 
-Component based architecture
+1.React is a JavaScript framework, and we will use Node.js to run our application in a web server because that's required.
+2.React is a web application and therefore we need a web server, even if it's on our own local computer.
+
+3.Component based architecture
 means reusable components
 we will create our root component called  - App.js
-
 we can create other component and place them in root component like movieGrid.js placed inside App.js.
+
+4. we need to install visual code studio as ide for react application, and Node.js(21.7.3). 
+also install some extensions - eslint - this shows errors while we are typing code.
 
 
