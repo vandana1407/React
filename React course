@@ -25,3 +25,6 @@ we will have a index,.html fiel and inside that a body tag and a div tag with id
 
 8. In react , for styling we cannpot use "class" as that is a reserved word in react, we use "classname" instead.
 
+9. we will 3 components - that wi;l be re-usabel - moviegrid, watchlist and movie card.
+In code we will first have to import react to create a component
+and then we will have a export default function - which is basicaly a way to export components from a file so that another component can import it.
