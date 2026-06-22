@@ -43,3 +43,11 @@ var has function scope , whewres et has block scope.
 const add = (a,b) => a+b;
 
 console.log(add(1,2));
+
+12. Handling state with React - 
+when the value of the state changes, then the UI for the component gets re-rendered automatically.
+import { useState } from "react";
+
+export default function App() {
+  const [movies, setMovies] = useState([]);
+  //we have variable names movies and to populate it we need to call function setMovies, this is called stateHook.
