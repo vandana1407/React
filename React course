@@ -35,4 +35,7 @@ it outside if loop it will take the value before if blockso if block scope if di
 but if we declare x with var, then even if we change it in if loop , then after the if loop too, it takes the changes and print them.
 var x = 10;
 var x = 10;
-const x = 10; -  we cannot assign a new value to a const variable in the function.
+const x = 10; -  we cannot assign a new value to a const variable in the function. but we can change properties of const. e.g. 
+const book = {"title": "book1"} ;  we can do book.title="hello world";
+
+11. Arrow functions - 
