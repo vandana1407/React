@@ -4,3 +4,6 @@ Component based architecture
 means reusable components
 we will create our root component called  - App.js
 
+we can create other component and place them in root component like movieGrid.js placed inside App.js.
+
+
