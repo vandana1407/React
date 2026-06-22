@@ -1,2 +1,6 @@
 React course from udemy - https://www.udemy.com/course/master-react/learn/lecture/43485072#overview
 
+Component based architecture
+means reusable components
+we will create our root component called  - App.js
+
