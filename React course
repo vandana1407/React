@@ -18,4 +18,8 @@ to create a react app
 npx create-react-app moviedux
 thsi will create our project, in background, it is installing react, react don and react scripts.
 
+6. we can start our application with npm start
+
+7. in App.js , we will have some javascrtipt and html - the combination is called jsx.
+
 
