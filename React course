@@ -51,3 +51,6 @@ import { useState } from "react";
 export default function App() {
   const [movies, setMovies] = useState([]);
   //we have variable names movies and to populate it we need to call function setMovies, this is called stateHook.
+//we initialized the state with nothing , as evident with [] brackets.
+//so thats the diff between state and variable, if we change the value of state(call setMovies anytime), it re-renders teh UI and 
+// updates uI with new values.but in case of var it does not do that.
