@@ -10,5 +10,12 @@ we can create other component and place them in root component like movieGrid.js
 
 4. we need to install visual code studio as ide for react application, and Node.js(21.7.3). 
 also install some extensions - eslint - this shows errors while we are typing code.
+prettier-Code Formatter - this is for code formtting in pretty way
+also we need to have in settings - preferences - format on code saved.
+
+5. we will have to use npx - that is to execute commands in terminal
+to create a react app
+npx create-react-app moviedux
+thsi will create our project, in background, it is installing react, react don and react scripts.
 
 
