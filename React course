@@ -28,3 +28,8 @@ we will have a index,.html fiel and inside that a body tag and a div tag with id
 9. we will 3 components - that wi;l be re-usabel - moviegrid, watchlist and movie card.
 In code we will first have to import react to create a component
 and then we will have a export default function - which is basicaly a way to export components from a file so that another component can import it.
+
+10 some javascript fundmentals - 
+let  - follows the scope  - so if we have in a function and whatever we do it it inside a if loop and if we print 
+it outside if loop it will take the value before if blockso if block scope if diff
+but if we declare x with var, then even if we change it in if loop , then after the if loop too, it takes the changes and print them.
