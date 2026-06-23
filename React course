@@ -189,6 +189,10 @@ return (
 
 23. React Reducer - 
 manages state in centralized way, t have clear separation between ui and state logic.
+reducer - how its done
+so we have components -  App.js and that has TiceketList, TicketItem
+and then we will have our TiceketReducer.js - that has actions like AddTicket, Delete Ticket and update ticket.,
+
 
 
 
