@@ -155,6 +155,27 @@ todos.forEach((todo, index) => {
 21. Array map - so we can tranform the arry and also rename the array elements, as we done below we renamed task to desc. and each array elemnets has just 2 properties rather than 3 .
 const mappedTodos = todos.map((todo) => {
   return {id: todo.id, desc: todo.task}
+});  now if we want to add a new property to each element we do like
+
+const mappedTodos = todos.map(()todo) => {
+  return {...todo, priority: "High"};
 });
+
+22. creating a ticket submit form
+we should have a clearn form method, we should have 3 states - title, description and priority
+and we should have handleSubmit method - 
+const handleSubmit = (e) => {
+e.preventDefault();  //to prevent to load the page to load again when we submit the form.
+clearForm();
+}
+
+we put this function on onsubmit of form
+
+return (
+  <form onSubmit={handleSubmit} className="ticket-form">
+    <div>
+      <label>Title</label>
+      <input type="text" value={title} classname="form-input onChange={ e => setTitle(e.target.value)}"></input>
+
 
 
