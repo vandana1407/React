@@ -131,3 +131,12 @@ console.log(math.multipl(1,3));
 17. Template Literals - with backticks - const geetings = `Hello ${firstName}`;
 template lierals is when we use interpolation here. - we can use javascript variables inside a string - that is string interpolation.
 
+18. Arrays find method - 
+const todos = [
+{ id:1, task: "Learn javascipt", completed: false },
+{ id:2, task:"learn java" , completed: true},
+{ id:3, task:"practoise react" , completed:false },
+];
+const todosById = todos.find((todo) => todo.id === 2);
+find returns the first element where our expression becomes true.
+
