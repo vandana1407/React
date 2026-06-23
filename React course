@@ -54,3 +54,31 @@ export default function App() {
 //we initialized the state with nothing , as evident with [] brackets.
 //so thats the diff between state and variable, if we change the value of state(call setMovies anytime), it re-renders teh UI and 
 // updates uI with new values.but in case of var it does not do that.
+
+we should also use useEffect, since we just need to call our state be updated only once 
+
+useEffect(() => {
+    const m = ["1","b", "c"]
+    setMovies(m);
+}, []);
+
+13. why do we need useEffcet - 
+React components should mainly focus on rendering UI.But sometimes you need to do things like:
+  Call a REST API
+  Load data from a server
+  Set up a timer
+  Listen for window events
+  Update the document title
+These are called side effects, so React provides useEffect.
+when it runs - 
+1. No dependency array
+useEffect(() => {});  - Runs after every render.
+2. Empty dependency array
+useEffect(() => {}, []);  - Runs once after initial render.
+3. With dependencies
+useEffect(() => {}, [userId]);
+Runs:
+First render
+Whenever userId changes
+
+14. Props:for passing data to components - 
