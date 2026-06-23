@@ -192,6 +192,22 @@ manages state in centralized way, t have clear separation between ui and state l
 reducer - how its done
 so we have components -  App.js and that has TiceketList, TicketItem
 and then we will have our TiceketReducer.js - that has actions like AddTicket, Delete Ticket and update ticket.,
+our components dispatch the actions to reducer, which handles them.
+import {reactReducer} from "react";
+
+const [state, dispatch] = useReducer(ticketReducer, initialState);
+useReducer is a react hook.
+
+now inside our TicketReducer - 
+export default function ticketReducer(state, action) {  //action we want to handle inside this reducer.
+  switch(action.type) {
+    case  "ADD_TICKET":
+      return { ...state, tickets: [...state.tickets, action.paylod]};
+    //other actions
+    default:
+      return state;
+  }
+}
 
 
 
