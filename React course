@@ -203,11 +203,21 @@ export default function ticketReducer(state, action) {  //action we want to hand
   switch(action.type) {
     case  "ADD_TICKET":
       return { ...state, tickets: [...state.tickets, action.paylod]};
+//reducer returns a state , we create a nw state by copying over the state(... state). sate is immutable so we dont modify existing state but create copy of it. and we are 
+modifying state by adding action.payload(that is currnet ticket form data) to existying tickets.
     //other actions
     default:
       return state;
   }
 }
+
+then in our component nside the handleSubmit method
+we add disparch method
+
+dispatch({
+  type: "ADD_TICKET",
+  payload: ticketData,
+});
 
 
 
