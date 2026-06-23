@@ -166,6 +166,14 @@ we should have a clearn form method, we should have 3 states - title, descriptio
 and we should have handleSubmit method - 
 const handleSubmit = (e) => {
 e.preventDefault();  //to prevent to load the page to load again when we submit the form.
+
+const TicektData = {
+  id: new Date().toISOString(),
+  title,
+  decription,
+  priority
+};
+
 clearForm();
 }
 
@@ -178,6 +186,9 @@ return (
       <input type="text" value={title} classname="form-input onChange={ e => setTitle(e.target.value)}"></input>  // here e is event
     </div>
   </form>
+
+23. React Reducer - 
+manages state in centralized way
 
 
 
