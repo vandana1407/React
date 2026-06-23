@@ -142,4 +142,10 @@ find returns the first element where our expression becomes true.
 
 19. Array filter - 
   const completedTodos = todos.filter(todo => todo.completed == true);
+And for every todo where the following condition becomes true, this one will get added to the new array.
+
+20. Array forEach
+todos.forEach((todo) => {
+    todo.completed = true;
+});
 
