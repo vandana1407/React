@@ -113,3 +113,16 @@ then in our code
 
 we will need to install react-router-dom for this
 on terminal do this, npm i react-router-dom@6.22.3
+
+16. if we qwant to export multipel dunctions from a module - But we are already exporting a default one.
+Then we cannot use the default again for another item.
+names exports - so we us named exports
+we simply write
+export function multiple(x,y) {
+    return x*y;
+}
+if we want to import default one we dont need curly braces, but for named functions to be imported need curly braces
+import add, {multiply} from "./math.js";
+if we now have a lot of func, and then we dont want to import 10 diff function names , we say
+import * from "./math.js"
+
