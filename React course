@@ -83,3 +83,10 @@ Whenever userId changes
 
 14. Props:for passing data to components - 
  props are used to pass data, events and even functions to components. Kind of like dependency injection in a similar way.
+so from MovieGrid.js , if we call MovieCard.js component then we do like this
+{movies.map((movie) => (
+  <MovieCard  movie={movie} key={movie.id}></MovieCard>
+))}
+
+15. React Router
+
