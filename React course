@@ -152,7 +152,7 @@ todos.forEach((todo, index) => {
   console.log(index + ": " + todo.task);
 });
 
-21. Array map - so we can tranform the arry and also rename the array elements, as we done below we renamed task to desc.
+21. Array map - so we can tranform the arry and also rename the array elements, as we done below we renamed task to desc. and each array elemnets has just 2 properties rather than 3 .
 const mappedTodos = todos.map((todo) => {
   return {id: todo.id, desc: todo.task}
 });
