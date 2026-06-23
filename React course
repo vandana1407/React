@@ -188,7 +188,7 @@ return (
   </form>
 
 23. React Reducer - 
-manages state in centralized way, t have clear separation between ui and state.
+manages state in centralized way, t have clear separation between ui and state logic.
 
 
 
