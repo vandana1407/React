@@ -140,3 +140,6 @@ const todos = [
 const todosById = todos.find((todo) => todo.id === 2);
 find returns the first element where our expression becomes true.
 
+19. Array filter - 
+  const completedTodos = todos.filter(todo => todo.completed == true);
+
