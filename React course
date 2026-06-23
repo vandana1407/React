@@ -205,7 +205,11 @@ export default function ticketReducer(state, action) {  //action we want to hand
       return { ...state, tickets: [...state.tickets, action.paylod]};
 //reducer returns a state , we create a nw state by copying over the state(... state). sate is immutable so we dont modify existing state but create copy of it. and we are 
 modifying state by adding action.payload(that is currnet ticket form data) to existying tickets.
-    //other actions
+    case "UPDATE_TICKET:
+      return { ...state, tickets: state.tickets.map((ticket) => 
+            ticket.id === action.paylod.id ? action.payload : ticket   // so we find the ticket, then we update it , or simply take the ticket.
+            )
+            }
     default:
       return state;
   }
