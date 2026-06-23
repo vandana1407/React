@@ -89,4 +89,4 @@ so from MovieGrid.js , if we call MovieCard.js component then we do like this
 ))}
 
 15. React Router
-
+we use router to let user navigate between pages or components.
