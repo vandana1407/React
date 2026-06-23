@@ -174,8 +174,10 @@ we put this function on onsubmit of form
 return (
   <form onSubmit={handleSubmit} className="ticket-form">
     <div>
-      <label>Title</label>
-      <input type="text" value={title} classname="form-input onChange={ e => setTitle(e.target.value)}"></input>
+      <label>Title</label>  
+      <input type="text" value={title} classname="form-input onChange={ e => setTitle(e.target.value)}"></input>  // here e is event
+    </div>
+  </form>
 
 
 
