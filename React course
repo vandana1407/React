@@ -148,4 +148,7 @@ And for every todo where the following condition becomes true, this one will get
 todos.forEach((todo) => {
     todo.completed = true;
 });
+todos.forEach((todo, index) => {
+  console.log(index + ": " + todo.task);
+});
 
