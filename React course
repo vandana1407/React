@@ -89,4 +89,25 @@ so from MovieGrid.js , if we call MovieCard.js component then we do like this
 ))}
 
 15. React Router
-we use router to let user navigate between pages or components.
+we use router to let user navigate between pages or components. In side router we create routes
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+then in our code
+<Router>
+  <nav>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/wtchlist">WatchList</Link>
+      </li>
+
+  <Routes>
+    <Route path="/" element={<MoviesGrid/>}></Route>
+    <Route path="/watchlist" element={<Watchlist />}></Route>
+  </Routes>
+</Router>
+
+we will need to install react-router-dom for this
+on terminal do this, npm i react-router-dom@6.22.3
