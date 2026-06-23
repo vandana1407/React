@@ -102,6 +102,8 @@ then in our code
       <li>
         <Link to="/wtchlist">WatchList</Link>
       </li>
+    </ul>
+  </nav>
 
   <Routes>
     <Route path="/" element={<MoviesGrid/>}></Route>
