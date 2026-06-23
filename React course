@@ -124,5 +124,10 @@ export function multiple(x,y) {
 if we want to import default one we dont need curly braces, but for named functions to be imported need curly braces
 import add, {multiply} from "./math.js";
 if we now have a lot of func, and then we dont want to import 10 diff function names , we say
-import * from "./math.js"
+import * as math from "./math.js"
+
+console.log(math.multipl(1,3));
+
+17. Template Literals - with backticks - const geetings = `Hello World`;
+template lierals is when we use interpolation here.
 
