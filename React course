@@ -168,14 +168,14 @@ const handleSubmit = (e) => {
 e.preventDefault();  //to prevent to load the page to load again when we submit the form.
 
 const TicektData = {
-  id: new Date().toISOString(),
+  id: editingTicket? editingTicket.id : new Date().toISOString(),
   title,
   decription,
   priority
 };
 
 dispatch({
-    type: "ADD_TICKET",
+    type: editingTicket? "UPDATE_TICKET" : "ADD_TICKET",
     payload: TicketData
 });
 
@@ -241,6 +241,34 @@ dispatch({
   payload: ticketData,
 });
 
+24. for sorting tickets based on priority high to low
+we will create a utilities folder and inside it we have logic to sort
 
+export const sortTicket = (tickets, preference) => {
+  switch(preference) {
+      case "High to Low":
+        return [...tickets].sort((a,b) => b.priority.localeCompare(a.priority));
+      case "Low to High":
+        return [...tickets].sort((a,b) => a.priority.localeCompare(b.priority));
+      case default:
+        return tickets;
+}
+};
+
+to use this in App.js
+we create  - 
+const initialState = {
+  tickets: [],
+  editingTicket: null,
+  sortPreference: "High to Low",
+};
+
+const sortedTickets = sortTickets(state.tickets, state.preference);
+
+so now in the  App.js we also change TicketList
+<TicketList
+  tickets={sortTickets}
+  dispatch={dispatch}
+></TicketList>
 
 
