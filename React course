@@ -290,10 +290,17 @@ export default userContext;
 now in another component where we want to use it
 import {useContext} from "react";
 const user = useContext(UserContext);
+
+return {
+  <div>
+    <p>Logged in as {user}</p>
+  </div>
+);
 and
 <UserConext.Provider value={user}>
   <ComponentA></ComponentA>
   <ComponentB></ComponentB>
 </UserContext.Provider>
+
 we can have multiple context in a single application , 
 so we dont need a single GlobalContext having everything , instead we can have several files like MessageContext.js etc
