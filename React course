@@ -280,3 +280,6 @@ and also this one addded
 25. Context API - 
 Global state mangemnet without prop drilling
 prop drilling is messy and harder to maintain.
+only use context when you have components that can be shared across multiple components
+where we use it - global app notifications etc e.g. we store current user in our global context
+we create global context in dedicated file called context.js , we dont create it in app.js
