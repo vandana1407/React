@@ -272,7 +272,7 @@ so now in the  App.js we also change TicketList
 ></TicketList>
 
 and also this one addded
-<select onChange={e => dispatch({type:"SET_SORTING", payload:e.target.value})}>
+<select value={state.sortPreference} onChange={e => dispatch({type:"SET_SORTING", payload:e.target.value})}>
   <option value="High to Low">High to Low</option>
   <option value="Low to High">Low to High</option>
 </select>
