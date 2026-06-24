@@ -339,3 +339,49 @@ function App() {
 }
 
 export default App;
+
+also in our ContentComponent.js we have to use theme like
+export default function ContentComponent() {
+  const { theme, toggleTheme }  = useContext(ThemeContext)
+
+  return  (
+    <div>
+      Current Theme {theme}
+      <button onClick={toggleTheme()}>Toggle Theme</button>
+    </div>
+  )
+}
+
+27. React Promises- 
+we will make use of asynchronous operations
+so when we want to load data from server , it will take time.
+so we create Promise for that, here Promise will take parameter - 
+which is function to call when promise is successful - calling it resolve
+another function which is called, when the Promise is not successful - rejected 
+const promise = new Promise((resolve, rejected) => {
+  setTimeout(() => {
+    resolve("Operayion successful");
+  }, 2000)
+  
+  //rejected(Operayion unsuccessful");
+});
+Most of the time , we work with apis , that already have Promises implemented.
+
+how to use a Promise - 
+promise.then((result) => {
+  console.log(result);
+})
+.catch((err) => {
+  console.error(err);
+});
+
+28. using async and await along with promises(promises returned frommfetch function)
+
+async function fetchDataAsync() {
+try {
+  const response = await fetch("https://jsonplaceholder.com/1");
+  const json = await response.json();
+  console.,log(json);
+} catch (err) {
+  console.error(err);
+}
