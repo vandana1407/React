@@ -388,4 +388,20 @@ try {
 
 
 29. consuming web api - using axios library 
+it is a promise based HTTP clinet for node.js and browser.
 for testing we can use fake api  - that give results - {json}
+axios( {
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'FirstName'
+    }
+});
+
+
+
+create a postService.js
+import axios from 'axios';
+
+const api = axios.create();  //we here created axios object instance.
