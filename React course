@@ -311,7 +311,7 @@ import {createContext} from "react";
 const ThemeContext = createContext();  //initialized them to nothing
 export default ThemeContext;
 
-then created a theme provider.js
+then created a ThemeProvider.js
 import ThemeContext from "./ThemeContext.js";
 import {React, useState} from "react";
 
@@ -328,3 +328,14 @@ return (
   </ThemeContext.Provider>
 );
 };
+here we have created a custom ThemeProvider, and created a special js file of it, instead of 
+creating a ThemProvider in App.js , the default one like this
+function App() {
+  return {
+    <ThemeProvider>
+      <ContentComponent></ContentComponent>
+    </ThemeProvider>
+  );
+}
+
+export default App;
