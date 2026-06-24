@@ -285,12 +285,15 @@ where we use it - global app notifications etc e.g. we store current user in our
 we create global context in dedicated file called context.js , we dont create it in app.js
 import {createContext} from "react";
 const UserContext = createContext({username: "Guest"})
+export default userContext;
+
 now in another component where we want to use it
 import {useContext} from "react";
 const user = useContext(UserContext);
-
 and
 <UserConext.Provider value={user}>
   <ComponentA></ComponentA>
   <ComponentB></ComponentB>
 </UserContext.Provider>
+we can have multiple context in a single application , 
+so we dont need a single GlobalContext having everything , instead we can have several files like MessageContext.js etc
