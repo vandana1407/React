@@ -304,3 +304,27 @@ and
 
 we can have multiple context in a single application , 
 so we dont need a single GlobalContext having everything , instead we can have several files like MessageContext.js etc
+
+26. context and state
+we have a file ThemeContext.js whree we create a theme context
+import {createContext} from "react";
+const ThemeContext = createContext();  //initialized them to nothing
+export default ThemeContext;
+
+then created a theme provider.js
+import ThemeContext from "./ThemeContext.js";
+import {React, useState} from "react";
+
+export const ThemeProvider = ({children}) => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    };
+
+return (
+  <ThemeContext.Provider value={{ theme, toggleTheme}}>
+    {children}
+  </ThemeContext.Provider>
+);
+};
