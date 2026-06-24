@@ -333,7 +333,7 @@ creating a ThemProvider in App.js , the default one like this
 function App() {
   return {
     <ThemeProvider>
-      <ContentComponent></ContentComponent>
+      <ContentComponent></ContentComponent>  //here also whatever the children are there , they are included to use theme
     </ThemeProvider>
   );
 }
