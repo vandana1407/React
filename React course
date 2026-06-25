@@ -448,7 +448,13 @@ import { BrowserRouter as Router, Routes, Route }  from "react-router-dom";
 function App() {
   return (
     <BooksProvider>
-      <Books></Boks>
+      <Router> 
+        <Routes>
+            <Route path="/" element={<Books></Books>}></Route>
+        </Routes>
+      </Router>
+
+
     </BooksProvider>
   );
 }
