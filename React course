@@ -534,3 +534,6 @@ In order to have 2 files , one for dev and one for prod
 .env.development and .env.production
 we define properties like API_URL
 now if we append VITE like VITE_API_URL it will automatically be able to pick prod or dev file based on how we start our app.
+
+
+32.Unit etesting with Vitest
