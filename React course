@@ -514,3 +514,7 @@ constPrivateRoute = ({Component}) => {
 };
 
 here we can re-use this PrivateRoute for all the paths that we have in private.
+
+31. use Vite instead of create-react-app to create new react apps
+npm install vite@latest
+npm install create-vite@latest
