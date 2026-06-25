@@ -501,3 +501,16 @@ export default function Books(){
 
 Private Routes - 
 if user is not logger in, he is prevented from exploring some of the pages.
+so in Ap.js add another Route
+<Route path="secret" element={<PrivateRoute Component={<SecretBooks></SecretBooks>}></PrivateBook>}></Route>
+
+where we have a componenet PrivateRoute.js
+import { Navigate} from "react-router-dom";
+
+constPrivateRoute = ({Component}) => {
+  const is Authenticated = false;
+
+  return isAuthenticated? Component : <Navigate to"/" />;
+};
+
+here we can re-use this PrivateRoute for all the paths that we have in private.
