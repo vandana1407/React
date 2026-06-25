@@ -409,7 +409,8 @@ const api = axios.create({   //we here created axios object instance.
 });  
 
 const getPosts = () => api.get("/posts")  //do not need to ad baseURL here.
-const deletePost =(id)(=> api.delete("/posts/${id}");
+const deletePost =(id)(=> api.delete(`/posts/${id}`);
 const createPost = (post) => api.post("/posts", post);
+const updatePost = (id, podt) => api.put(`/posts/${id}`, post);
 export {getPosts, deletePost, createPost}
 
