@@ -467,11 +467,19 @@ how to add path from one to another route using navigation
 we can also create route with a dynamic parameter
 lets create new component - BookDetails.js inside components folder
 
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import {BooksContext} from "../BooksContext";
 import { useParams} from "react-router-dom";
 
 export default function BookDetails() {
   const bookId = useParams();
+  const books = useContext(BooksContext);
+
+  const book = books.find(b=> b.id === parseInt(bookId));  //converts string to integer
+
+  useEffect(() => {
+    console.log(bookId);
+  }, []);
+
    return <></>;
 }
