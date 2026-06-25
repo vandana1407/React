@@ -414,3 +414,6 @@ const createPost = (post) => api.post("/posts", post);
 const updatePost = (id, podt) => api.put(`/posts/${id}`, post);
 export {getPosts, deletePost, createPost}
 
+
+30 Router in React inndepth - 
+
