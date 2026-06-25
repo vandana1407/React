@@ -518,3 +518,10 @@ here we can re-use this PrivateRoute for all the paths that we have in private.
 31. use Vite instead of create-react-app to create new react apps
 npm install vite@latest
 npm install create-vite@latest
+now when we have to create a new project we do like
+npm create vite@latest  and it asks for project name and package name, then we choose frameowker, we choose react
+then we choose variant - javascript
+asks  - you want to use roll-down vite(experimental)
+no
+and now to run teh project , we can go inside our project folder 
+and do npx vite , or npm run dev
