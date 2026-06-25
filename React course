@@ -417,4 +417,10 @@ export {getPosts, deletePost, createPost}
 
 30 Router in React inndepth - 
 we have to install npm i react-router-dom  in terminal
+BooksContext.js
+import React, {useState, useEffect, createContext} from "react";
 
+export const BooksContext = createContext();
+
+export const BooksProvider = ({children}) => {
+};
