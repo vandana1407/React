@@ -443,7 +443,7 @@ in our App.js
 we do
 import { BooksProvider} from "./BooksContext";
 import Books from "./components/Books";
-import { BrowserRouter as Router, Routes, Route }  from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate }  from "react-router-dom";
 
 function App() {
   return (
@@ -460,3 +460,5 @@ function App() {
 }
 
 export default App;
+
+how to add path from one to another route using navigation
