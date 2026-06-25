@@ -451,6 +451,7 @@ function App() {
       <Router> 
         <Routes>
             <Route path="/" element={<Books></Books>}></Route>
+            <Route path="/books" element={<Navigate to="/" />}></Route>
         </Routes>
       </Router>
 
@@ -462,3 +463,14 @@ function App() {
 export default App;
 
 how to add path from one to another route using navigation
+we can also create route with a dynamic parameter
+lets create new component - BookDetails.js inside components folder
+
+import React, {useContext} from "react";
+import {BooksContext} from "../BooksContext";
+import { useParams} from "react-router-dom";
+
+export default function BookDetails() {
+  const bookId = useParams();
+   return <></>;
+}
