@@ -495,3 +495,9 @@ useLocation will have the complete url and .search() will have the query part of
 import {useLocation} from "react-router-dom";   
 export default function Books(){
   const query = new URLSearchParams(useLocation.search());
+  const lastname = query.get("lastname") || '';
+
+    const filteredBooks = books.filter(b => b.title.toLowerCase().includes(lastname.toLowerCase()));
+
+Private Routes - 
+if user is not logger in, he is prevented from exploring some of the pages.
