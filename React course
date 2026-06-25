@@ -525,3 +525,10 @@ asks  - you want to use roll-down vite(experimental)
 no
 and now to run teh project , we can go inside our project folder 
 and do npx vite , or npm run dev
+to buidl project we do  - npx vite build or npm run build  -this will create s dist filder
+now if we want to have our build files inside build folder, we can do in vite.config.js file 
+build:
+  outDir: "build",
+},
+In order to have 2 files , one for dev and one for prod
+.env.development and .env.production
