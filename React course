@@ -423,4 +423,34 @@ import React, {useState, useEffect, createContext} from "react";
 export const BooksContext = createContext();
 
 export const BooksProvider = ({children}) => {
-};
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetch("/books.json")
+    .then(response => respoonse.json)
+    .then(data => setBooks(data))
+    .catch(err  => console.log(err);
+  }, []);
+
+  return ( 
+    <BooksContext.Provider value={books}>
+      {children}
+    </BooksContext.Provider>
+);
+
+
+in our App.js
+we do
+import { BooksProvider} from "./BooksContext";
+import Books from "./components/Books";
+import { BrowserRouter as Router, Routes, Route }  from "react-router-dom";
+
+function App() {
+  return (
+    <BooksProvider>
+      <Books></Boks>
+    </BooksProvider>
+  );
+}
+
+export default App;
