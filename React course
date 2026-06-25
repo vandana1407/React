@@ -453,6 +453,8 @@ function App() {
             <Route path="/" element={<Books></Books>}></Route>
             <Route path="/books" element={<Navigate to="/" />}></Route>
             <Route path="/books/:bookId" element={<BooksDetails></BooksDetails>}></Route>
+            <Route path="*" element={<NotFound></NotFound>}></Route>  //here this means for everything other than above
+  // we forward it to our component NotFound.js
         </Routes>
       </Router>
 
