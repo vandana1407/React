@@ -488,3 +488,10 @@ export default function BookDetails() {
     <p>{book.description}</p>
   );
 }
+
+reading query oarameters in React router - 
+myapp.com/users?lastname=doe&firstname=john, for this we wil use inside our Books.js
+useLocation will have the complete url and .search() will have the query part of url in it.
+import {useLocation} from "react-router-dom";   
+export default function Books(){
+  const query = new URLSearchParams(useLocation.search());
