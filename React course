@@ -416,4 +416,5 @@ export {getPosts, deletePost, createPost}
 
 
 30 Router in React inndepth - 
+we have to install npm i react-router-dom  in terminal
 
