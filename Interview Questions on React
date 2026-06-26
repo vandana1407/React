@@ -1,0 +1,131 @@
+What problem React solves
+How it is different from plain JavaScript
+Why companies use React
+What Virtual DOM is and why it improves performance
+Answer:
+React is a JavaScript library for building component-based user interfaces. Instead of manually manipulating the DOM whenever data changes, 
+developers describe what the UI should look like for a given state. When the state changes, React re-renders the affected components and 
+efficiently updates only the parts of the real DOM that actually changed.
+
+React solves the complexity of keeping the UI synchronized with application state. In plain JavaScript, developers often have to manually 
+query DOM elements and update them, which becomes difficult as applications grow.
+
+React uses a Virtual DOM, which is an in-memory representation of the real DOM. When state changes, React creates a new Virtual DOM tree, 
+compares it with the previous one using its reconciliation algorithm (diffing), and applies only the minimal required changes to the real DOM. 
+This minimizes expensive DOM operations and improves performance.
+
+Companies use React because it promotes reusable components, predictable state management, a rich ecosystem, excellent developer productivity, 
+and maintainable codebases.
+
+Question - 
+when state changes, the page is rendered again.
+Answer - 
+When setCount(count + 1) is called, React schedules an update for the component that owns that state. 
+React re-renders that component by calling its function again to produce a new Virtual DOM.
+
+By default, React also re-renders that component's children because the parent is rendering again. 
+It then compares the new Virtual DOM with the previous Virtual DOM (reconciliation) and updates only the parts of the real DOM that actually changed.
+
+Not every component in the application re-renders. Components whose state and props haven't changed may be skipped, 
+especially if they're optimized using React.memo, useMemo, or useCallback.
+
+
+Question - 
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <Header />
+      <Counter count={count} />
+      <Footer />
+    </>
+  );
+}
+When setCount is called:
+
+Does Header re-render?
+Does Counter re-render?
+Does Footer re-render?
+Answer: -
+When setCount() is called:
+
+App re-renders because its state changed.
+Since App re-renders, React calls Header, Counter, and Footer again by default.
+React compares the new Virtual DOM with the previous one and updates the real DOM only where necessary.
+
+So by default:
+
+✅ Header re-renders.
+✅ Counter re-renders.
+✅ Footer re-renders.
+
+However, the actual DOM for Header and Footer may not change because their output is the same.
+
+Question - What's the difference between state and props?
+Answer - 
+State represents data that can change over time.
+✅ Props are passed from parent to child.
+✅ State can be updated using a setter function (setState or the setter returned by useState)
+State is owned by the component that declares it.
+Props are owned by the parent and are read-only in the child.
+Can props be modified?
+No. Props are immutable from the child's perspective. 
+If a child needs to change a prop's value, it should call a callback function provided by the parent, and the parent updates its own state.
+For example, if a parent component stores a list of users in its state, it can pass each user to a UserCard component through props. 
+If the child wants to delete a user, it can call an onDelete callback prop, and the parent updates its state.
+
+Question - 
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return <Child count={count} />;
+}
+
+function Child({ count }) {
+  count = count + 1;
+  return <h1>{count}</h1>;
+}
+Will this code throw an error?
+Is it okay to modify count like this?
+Will the parent's count state change?
+Why or why not?
+Answer - 
+function Child({ count }) {
+  count = count + 1;
+  return <h1>{count}</h1>;
+}
+
+Here, count is just a local JavaScript variable inside the Child function.
+When you write:
+
+count = count + 1;
+
+you're not modifying the parent's prop. You're simply reassigning the local parameter.
+Will this code throw an error?
+No. Reassigning a function parameter is valid JavaScript (although it's bad practice). React won't throw an error.
+Is it okay to modify count like this?
+No. Props should be treated as read-only. Even though you're only reassigning a local variable, it makes the code confusing and doesn't update the parent.
+Will the parent's count state change?
+No. The parent still has the original state value.
+Why?
+Because React passes the prop value into the child. The child receives its own local variable. Reassigning that local variable does not affect the parent's state.
+This is a common interview trap.
+
+Many interviewers are checking whether you understand the difference between:
+
+Modifying an object passed as a prop (which can affect shared data if you mutate it)
+Reassigning a primitive parameter (which only changes the local variable)
+
+Question - 
+When should you use useState?
+When should you use useRef?
+Which one causes a component to re-render when its value changes?
+Give one real-world example where useRef is a better choice than useState
+Answer - 
+useState stores component state.
+✅ Updating it with setState causes the component to re-render.
+useState is used for data that affects what is rendered on the screen.
+When the state changes through its setter function, React schedules a re-render so the UI reflects the new value.
+useRef stores a mutable value that persists across renders, but updating ref.current does not trigger a re-render. 
+It's useful for values that need to survive renders but don't affect the UI.
