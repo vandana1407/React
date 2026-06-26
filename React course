@@ -559,4 +559,4 @@ import  "@testing-library/jest-dome";
 
 and then in vite.config.js , we can add it as setupFiles, any number of files can be added and hence no more in our tests 
 we need to do all imports.
-
+we can also have mock data defined in set up files
