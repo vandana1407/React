@@ -128,4 +128,15 @@ useState stores component state.
 useState is used for data that affects what is rendered on the screen.
 When the state changes through its setter function, React schedules a re-render so the UI reflects the new value.
 useRef stores a mutable value that persists across renders, but updating ref.current does not trigger a re-render. 
-It's useful for values that need to survive renders but don't affect the UI.
+It's useful for values that need to survive renders but don't affect the UI.e.g. - Storing timer IDs (setTimeout/setInterval)
+
+Question - 'const countRef = useRef(0);
+
+function increment() {
+    countRef.current++;
+}After clicking a button that calls increment() five times:
+
+Will the UI automatically display 5? Why or why not?
+Answer - 
+No. Updating countRef.current does not cause React to re-render the component. The value inside the ref changes and is preserved across renders, but since 
+React isn't notified of the change, the UI continues displaying the old value. The updated value will only appear if the component re-renders for some other reason.
