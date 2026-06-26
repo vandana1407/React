@@ -540,3 +540,23 @@ now if we append VITE like VITE_API_URL it will automatically be able to pick pr
 install these deendencies only for dev env
 npm install -D vitest @testing-library/react @testing-library/jest-dom
 vitest - is the test runner library
+
+App.test.jsx
+import {render, screen} from @'testing-library/react';
+import {test, expect} from ''vitest'
+import '@testing-library/jest-dom'
+import App from './App'
+
+
+test('renders hellow world', () => {
+  render(<App/>)
+  expect(screen.getByText(/Hello Wolrd/i)).toBeInDocument();
+})
+
+then run it with npm test
+we can have a unit test set up file and it can have imports like 
+import  "@testing-library/jest-dome";
+
+and then in vite.config.js , we can add it as setupFiles, any number of files can be added and hence no more in our tests 
+we need to do all imports.
+
