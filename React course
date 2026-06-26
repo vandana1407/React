@@ -551,6 +551,12 @@ import App from './App'
 test('renders hellow world', () => {
   render(<App/>)
   expect(screen.getByText(/Hello Wolrd/i)).toBeInDocument();
+
+  const {container} = render(<InvoiceDetails{...defaultProps} />);
+  const statusElement  =container.querySelector('.status');
+
+  expect(statusElement).toBeInTheDocument(); ///checks if a partucluar elemts is in the page
+  expect(statusElement.classList.contains('paid')).toBe(true);  //checks if a partucular style class is associated with this element
 })
 
 then run it with npm test
