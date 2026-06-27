@@ -162,3 +162,35 @@ two heuristics:
   Developers provide a key prop to identify stable elements across renders (crucial for lists).
 The Commit Phase: Once React calculates the exact minimum differences (the "delta"), it batches those 
 changes and updates only those specific nodes in the Real DOM.
+
+Question 4 (State Management & Context)
+Imagine a large application where a global ThemeContext holds an object with 20 different UI configuration
+variables. A highly complex dashboard component consumes only one string from that context. If another 
+unrelated property in that context changes, will our dashboard component re-render? How would you optimize 
+or fix this?
+yes, the dashboard component will re-render.
+
+Why it re-renders:
+The moment any property inside a Context provider value changes, every single component that calls useContext 
+for that provider will instantly re-render. React does not natively support partial subscriptions to a single 
+context object. Even if your dashboard only reads context.themeColor, a change to context.sidebarWidth 
+forces the dashboard to re-render.
+How to optimize/fix this in an interview:
+Split the Context: Break the massive 20-variable context into smaller, logically isolated contexts (e.g., ThemeContext, SidebarContext).
+
+Separate Component + Memoization: Keep the context consumption in a thin wrapper component, extract the 
+value you need, and pass it down as a primitive prop to a child component wrapped in React.memo.
+
+Use External State Libraries: If state updates frequently, recommend migrating that specific slice of 
+state to a library like Zustand or Redux Toolkit, which allow components to use selectors to subscribe 
+only to specific properties.
+
+Question 5 (Refs vs State)
+What is the key difference between updating a value stored in useState versus updating a value stored in useRef?
+Can you give an example of a scenario where useRef is the superior choice?
+useState triggers a re-render upon update.
+useRef updates mutating values instantly in memory without triggering a re-render, 
+preserving that value across subsequent renders.
+Perfect Scenarios for useRef:
+Storing Timer/Interval IDs: Storing setInterval or setTimeout IDs so 
+you can clear them inside a cleanup function without causing a re-render when the timer starts.
