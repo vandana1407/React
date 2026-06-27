@@ -7,5 +7,5 @@ And this will then automatically create a brand-new CodeSandbox for you already 
 
 why do fronetnend frameworks like react exist?
 1. they keep user interface in sync with data, which is a very hard problem
-they enforce correct way of structing and writing code(therefore solving problem of sphegetti code).
+2. they enforce correct way of structing and writing code(therefore solving problem of sphegetti code).
 
