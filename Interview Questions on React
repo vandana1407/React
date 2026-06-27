@@ -140,3 +140,25 @@ Will the UI automatically display 5? Why or why not?
 Answer - 
 No. Updating countRef.current does not cause React to re-render the component. The value inside the ref changes and is preserved across renders, but since 
 React isn't notified of the change, the UI continues displaying the old value. The updated value will only appear if the component re-renders for some other reason.
+
+Virtual DOM vs. Real DOM & Reconciliation
+The Difference
+The Real DOM: A tree structure representation of the UI. Updating it is computationally expensive because 
+changes force the browser to recalculate layouts, styles, and repaint the screen (Reflow and Repaint).
+
+The Virtual DOM (VDOM): A lightweight, in-memory blueprint (a collection of plain JavaScript objects) 
+that mirrors the real DOM. Modifying it is incredibly fast because it doesn't touch the screen or trigger
+browser rendering engines.
+
+How Reconciliation WorksWhen a component’s state or props change, React triggers the Reconciliation process 
+via its diffing algorithm (historically optimized by the React Fiber architecture):
+Render a New Tree: React re-runs the component and builds a brand-new Virtual DOM tree representing 
+what the UI should look like.
+The Diffing Algorithm: React compares (diffs) the new VDOM tree with 
+the previous VDOM tree. To keep this fast (an $O(n)$ operation instead of $O(n^3)$), React relies on 
+two heuristics:
+  Two elements of different types will produce different trees (React will tear down the old component 
+  tree and mount the new one entirely).
+  Developers provide a key prop to identify stable elements across renders (crucial for lists).
+The Commit Phase: Once React calculates the exact minimum differences (the "delta"), it batches those 
+changes and updates only those specific nodes in the Real DOM.
